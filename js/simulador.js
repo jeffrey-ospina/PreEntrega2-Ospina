@@ -7,8 +7,14 @@ let mensaje =
 const valorAleatorio = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-//Se le asigna un numero ID al usuario usando el ciclo 'for'
-alert("Presione 'Aceptar' para obtener su ID:");
+//Se pide al usuario ingresar el dato
+let vehiculo = prompt("Ingresa el tipo de vehículo:");
+let vehiculoLowerCase = vehiculo.toLowerCase();
+
+//Se define el objeto vacío donde se guardarán los datos
+const cliente = {};
+
+//Ciclo 'for' para generar un ID aleatorio
 for (let numero = 1; numero <= 1; numero++) {
   let numeroAsignado = Math.floor(Math.random() * 40) + 1;
   alert(
@@ -16,11 +22,18 @@ for (let numero = 1; numero <= 1; numero++) {
       numeroAsignado +
       "\n \nPresione 'Aceptar' para continuar"
   );
+  cliente.identificador = numeroAsignado;
 }
+cliente.vehiculo = vehiculoLowerCase;
+cliente.fechaIngreso = new Date();
+
+//Se muestra a través de consola los datos que ahora tiene el objeto
+console.log(cliente);
+
 //Se muestra el mensaje guardado para comenzar con la otra parte del programa
 let inicio = prompt(mensaje);
 
-//Variables afuera para mantener el mismo resultado del bucle a continuación
+//Variables de scope global para generar el resultado
 let hora = valorAleatorio(1, 6);
 let minutos = valorAleatorio(1, 60);
 let precio = (minutos / 60) * precioHora + hora * precioHora;
@@ -28,9 +41,30 @@ let precioTotal = precio.toFixed(2);
 
 //Comienzo del bucle 'while'
 while (inicio !== "3") {
-  //Se hace uso de condicionales
   if (inicio === "1") {
     alert("Tu deuda total es: " + precioTotal + "$");
+    //Se inicializa un arreglo vacío donde luego se guardarán algunos datos
+    const arregloDatos = [];
+
+    const fecha = new Date();
+    const cantidadPagada = precioTotal;
+    const identificador = cliente.identificador;
+    const tipoVehiculo = cliente.vehiculo;
+    arregloDatos.push(fecha, cantidadPagada, identificador, tipoVehiculo);
+
+    //Se muestra a través de consola los datos que ahora tiene el arreglo
+    console.log(arregloDatos);
+
+    //Se hace uso del metodo 'includes' para saber si existe el elemento dentro del arreglo
+    let encontrarElemento = arregloDatos.includes("moto");
+    console.log(encontrarElemento);
+
+    //Condicional relacionado con el resultado del metodo anterior
+    if (encontrarElemento) {
+      console.log("¡Recuerda usar casco siempre!");
+    } else {
+      console.log("¡Vuelva pronto!");
+    }
   } else if (inicio === "2") {
     alert(
       "Se ha pagado correctamente el monto de: " +
