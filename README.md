@@ -4,16 +4,16 @@ Se agrega objetos, arreglos y métodos de búsqueda sobre los arreglos. A contin
 
 - Objetos: Se define un objeto vacío donde se guardan tres elementos.
 
-· Número de identificador de ese nuevo cliente que se generó con el 'for'.
-· Tipo de vehículo que se obtiene a través del prompt.
-· Fecha y hora en la que el usuario realiza esta acción.
+1. Número de identificador de ese nuevo cliente que se generó con el 'for'.
+2. Tipo de vehículo que se obtiene a través del prompt.
+3. Fecha y hora en la que el usuario realiza esta acción.
 
 - Arreglos: Se define un arreglo vacío donde se guardan cuatro elementos.
 
-· Fecha y hora en la que el usuario consulta la deuda a pagar.
-· Monto total de la factura.
-· Identificador del cliente.
-· Tipo de vechículo.
+1. Fecha y hora en la que el usuario consulta la deuda a pagar.
+2. Monto total de la factura.
+3. Identificador del cliente.
+4. Tipo de vechículo.
 
 - Método de búsqueda sobre el arreglo: Se usa el método 'includes' para saber si el tipo de vehículo ingresado por el usuario es moto. (Todo esto con fines de hacer uso del método y poner un poco más de líneas de código para representar lo que hace.)
 
